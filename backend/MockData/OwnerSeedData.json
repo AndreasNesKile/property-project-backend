@@ -1,0 +1,33 @@
+[
+  {
+    "Name": "Ken",
+    "Surname": "Wood",
+    "Phone": 4646464,
+    "Email": "Ken.Wood@bestkitchenequipment.com",
+    "DateOfBirth": "1985-03-05",
+    "DNumber": "",
+    "CreatedAt": "2019-01-03",
+    "OwnerTypeId": 1
+  },
+  {
+    "Name": "Roger",
+    "Surname": "That",
+    "Phone": 133780084,
+    "Email": "Roger.That@elites.com",
+    "DateOfBirth": "1985-03-05",
+    "DNumber": "",
+    "CreatedAt": "2019-01-03",
+    "OwnerTypeId": 1
+  },
+  {
+    "Name": "Apartments",
+    "Surname": "Company",
+    "Phone": 12341234,
+    "Email": "service@apartments.com",
+    "DateOfBirth": "1990-07-07",
+    "DNumber": "",
+    "CreatedAt": "2019-02-02",
+    "OwnerTypeId": 2
+  }
+
+]
