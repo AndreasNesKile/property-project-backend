@@ -21,6 +21,9 @@ namespace backend.Models
         [Column(TypeName = "nvarchar(50)")]
         public string Email { get; set; }
 
+        [Column(TypeName = "nvarchar(12)")]
+        public string PhoneNumber { get; set; }
+
         public DateTime DateOfBirth { get; set; }
 
         [Required]
