@@ -16,6 +16,11 @@ namespace backend.Data
             _context = context;
         }
 
+
+        /// <summary>
+        /// Retrieves a list of all the properties in the SQL database.
+        /// </summary>
+        /// <returns>List of properties.</returns>
         public async Task<IEnumerable<Property>> GetProperties()
         {
 
@@ -28,6 +33,11 @@ namespace backend.Data
             return properties;
         }
 
+        /// <summary>
+        /// Retrieves a property object from the SQL Db that matches the identifier, with images, type and status included.
+        /// </summary>
+        /// <param name="propertyId">Identifier for the property.</param>
+        /// <returns>If a match was found the property is returned, null if none was found</returns>
         public async Task<Property> GetGuestProperty(int propertyId)
         {
             var result = await _context.Properties.Where(property => property.Id == propertyId)
@@ -39,6 +49,11 @@ namespace backend.Data
             return result;
         }
 
+        /// <summary>
+        /// Retrieves a property object from the SQL Db that matches the identifier, with images, type, status, and renovations included.
+        /// </summary>
+        /// <param name="propertyId">Identifier for the property.</param>
+        /// <returns>If a match was found the property is returned, null if none was found</returns>
         public async Task<Property> GetBuyerProperty(int propertyId)
         {
             var result = await _context.Properties.Where(property => property.Id == propertyId)
@@ -51,6 +66,11 @@ namespace backend.Data
             return result;
         }
 
+        /// <summary>
+        /// Retrieves a property object from the SQL Db that matches the identifier, with everything related to the property included.
+        /// </summary>
+        /// <param name="propertyId">Identifier for the property.</param>
+        /// <returns>If a match was found the property is returned, null if none was found</returns>
         public async Task<Property> GetAgentProperty(int propertyId)
         {
             var result = await _context.Properties.Where(property => property.Id == propertyId)
