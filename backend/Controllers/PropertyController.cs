@@ -22,6 +22,13 @@ namespace backend.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Retrives a list of all properties in the database and returns it
+        /// </summary>
+        /// <returns>
+        /// If successful, returns 200 Ok with a list of property objects.
+        /// If no properties could be found, returns 404 NotFound
+        /// </returns>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -39,6 +46,14 @@ namespace backend.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrives the property that matches the specified identifier
+        /// </summary>
+        /// <param name="id">The id of the property that is requested</param>
+        /// <returns>
+        /// If successful, returns 200 Ok with a  property object.
+        /// If no properties that matched the specified id could be found, returns 404 NotFound
+        /// </returns>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
