@@ -23,6 +23,14 @@ namespace backend.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Retrieves the account information of the user currently logged in. If no record is found of the user in the database, creates a new record.
+        /// </summary>
+        /// <param name="id">Unique identifier for the account to be retrieved</param>
+        /// <returns>
+        /// If request is successful, returns 200 Ok with an account object
+        /// If user supplies an invalid token, returns a 401 Unathorized
+        /// </returns>
         [HttpGet("{id}")]
         [Authorize(Roles = "Buyer, Agent")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -62,7 +70,18 @@ namespace backend.Controllers
                 return Unauthorized("User lacks necessary credentials");
             }
         }
-        
+
+        /// <summary>
+        /// Updates the user specified in the token with the values in the request body.
+        /// </summary>
+        /// <param name="id">Unique identifier for the account to be updated</param>
+        /// <param name="accountForUpdate">The values to update the account object with</param>
+        /// <returns>
+        /// If successful, returns 204 No Content
+        /// If no changes were made, returns 200 Ok
+        /// If the user to be updated could not be found, returns 404 Not Found
+        /// If no valid token supplied, returns 401 Unauthorized
+        /// </returns>
         [HttpPut("{id}")]
         [Authorize(Roles = "Buyer, Agent")]
         public async Task<IActionResult> UpdateAccount(int id, AccountForUpdateDTO accountForUpdate)
