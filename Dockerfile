@@ -5,13 +5,12 @@
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-nanoserver-1809 AS base
 WORKDIR /app
-EXPOSE 80
+EXPOSE 5000
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-nanoserver-1809 AS build
 WORKDIR /src
 COPY ["backend/backend.csproj", "backend/"]
-COPY ["/NuGet.Config", "backend/.config/NuGet/"]
 RUN dotnet restore "backend/backend.csproj"
 COPY . .
 WORKDIR "/src/backend"
@@ -23,4 +22,4 @@ RUN dotnet publish "backend.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "backend.dll"]
+ENTRYPOINT ["dotnet", "run", "backend.dll"]
