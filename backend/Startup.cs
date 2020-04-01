@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using backend.Data;
@@ -70,7 +71,8 @@ namespace backend
                 options.AddPolicy("RequireAgentRole", policy => policy.RequireClaim("https://property.com/roles", "Agent"));
             });
 
-            services.AddDbContext<PropertyDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            
+            services.AddDbContext<PropertyDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")).ToString());
 
             services.AddControllers();
             services.AddAutoMapper(typeof(PropertyRepository).Assembly, typeof(AccountRepository).Assembly);
@@ -110,7 +112,7 @@ namespace backend
                 }));
 
             }
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
           
             app.UseRouting();
 

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace backend.Migrations
 {
-    public partial class InitialCreateV2 : Migration
+    public partial class mssql : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -67,6 +67,7 @@ namespace backend.Migrations
                     Name = table.Column<string>(type: "nvarchar(30)", nullable: true),
                     Surname = table.Column<string>(type: "nvarchar(40)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(50)", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(12)", nullable: true),
                     DateOfBirth = table.Column<DateTime>(nullable: false),
                     Active = table.Column<bool>(nullable: false),
                     AccountTypeId = table.Column<int>(nullable: false)
@@ -114,14 +115,16 @@ namespace backend.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(60)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(160)", nullable: false),
                     Value = table.Column<int>(nullable: false),
-                    Line_1 = table.Column<string>(type: "nvarchar(50)", nullable: false),
+                    Line_1 = table.Column<string>(type: "nvarchar(80)", nullable: false),
                     Line_2 = table.Column<string>(type: "nvarchar(30)", nullable: true),
                     Municipality = table.Column<string>(type: "nvarchar(50)", nullable: false),
                     City = table.Column<string>(type: "nvarchar(50)", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(40)", nullable: false),
-                    ZipCode = table.Column<string>(type: "nvarchar(8)", nullable: false),
+                    ZipCode = table.Column<string>(type: "nvarchar(10)", nullable: false),
+                    XCoordinate = table.Column<string>(nullable: true),
+                    YCoordinate = table.Column<string>(nullable: true),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     PropertyStatusId = table.Column<int>(nullable: false),
                     PropertyTypeId = table.Column<int>(nullable: false)
