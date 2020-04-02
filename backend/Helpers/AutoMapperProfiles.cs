@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using backend.DTO;
 using backend.Models;
-using System;
 using System.Linq;
 
 namespace backend.Helpers
