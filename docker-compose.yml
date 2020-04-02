@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+    backend:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        volumes: 
+            - ./conf.d/https/:/https/
+        ports:
+            - '8000:80'
+        depends_on:
+            - db
+        environment:
+            ASPNETCORE_FORWARDEDHEADERS_ENABLED: 'true'
+            ASPNETCORE_URLS: ${ASPNETCORE_URLS}
+            ASPNETCORE_Kestrel__Certificates__Default__Password: ${ASPNETCORE_KESTREL_CERTIFICATE_PASSWORD}
+            ASPNETCORE_Kestrel__Certificates__Default__Path: ${ASPNETCORE_KESTREL_CERTIFICATE_PATH}
+    db:
+        image: mcr.microsoft.com/mssql/server
+        environment:
+            SA_PASSWORD: '${DB_PW}'
+            ACCEPT_EULA: 'Y'
+        ports:
+            - '127:0.0.1:1433:1433'

@@ -10,14 +10,14 @@ using backend.Data;
 namespace backend.Migrations
 {
     [DbContext(typeof(PropertyDbContext))]
-    [Migration("20200320133332_AddedCoordinatesToProperty")]
-    partial class AddedCoordinatesToProperty
+    [Migration("20200401113944_mssql")]
+    partial class mssql
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.2")
+                .HasAnnotation("ProductVersion", "3.1.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -41,6 +41,9 @@ namespace backend.Migrations
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(12)");
 
                     b.Property<string>("Surname")
                         .HasColumnType("nvarchar(40)");
@@ -177,7 +180,7 @@ namespace backend.Migrations
 
                     b.Property<string>("Line_1")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(80)");
 
                     b.Property<string>("Line_2")
                         .HasColumnType("nvarchar(30)");
@@ -188,7 +191,7 @@ namespace backend.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(60)");
+                        .HasColumnType("nvarchar(160)");
 
                     b.Property<int>("PropertyStatusId")
                         .HasColumnType("int");
@@ -207,7 +210,7 @@ namespace backend.Migrations
 
                     b.Property<string>("ZipCode")
                         .IsRequired()
-                        .HasColumnType("nvarchar(8)");
+                        .HasColumnType("nvarchar(10)");
 
                     b.HasKey("Id");
 
