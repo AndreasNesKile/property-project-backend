@@ -1,0 +1,35 @@
+[
+  {
+    "Id":  "1",
+    "Name": "Ola",
+    "Surname": "Nordmann",
+    "Phone": 12345678,
+    "Email": "ola.nordmann@test.no",
+    "DateOfBirth": "1975-02-02",
+    "Active": "true",
+    "CreatedAt": "2015-05-03",
+    "AccountTypeId": 1
+  },
+  {
+    "Id": "2",
+    "Name": "Jeims",
+    "Surname": "Baond",
+    "Phone": 87654321,
+    "Email": "jeims.baond@bond.no",
+    "DateOfBirth": "1987-01-17",
+    "Active": "true",
+    "CreatedAt": "2015-05-03",
+    "AccountTypeId": 2
+  },
+  {
+    "Id": "3",
+    "Name": "Kari",
+    "Surname": "Karlsen",
+    "Phone": 12312312,
+    "Email": "kari.karlsen@email.com",
+    "DateOfBirth": "1965-07-28",
+    "Active": "true",
+    "CreatedAt": "2018-09-02",
+    "AccountTypeId": 1
+  }
+]

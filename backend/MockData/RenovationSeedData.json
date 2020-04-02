@@ -1,0 +1,26 @@
+[
+  {
+    "Description": "Made it nice. New floors and water proof ceiling.",
+    "DateFrom": "2001-01-01",
+    "DateTo": "2001-07-31",
+    "PropertyId": 1
+  },
+  {
+    "Description": "Added central heating.",
+    "DateFrom": "1999-01-01",
+    "DateTo": "1999-02-26",
+    "PropertyId": 1
+  },
+  {
+    "Description": "New bathroom and kitchen",
+    "DateFrom": "2013-02-02",
+    "DateTo": "2013-05-07",
+    "PropertyId": 2
+  },
+  {
+    "Description": "Removed chimney and added a swimming pool",
+    "DateFrom": "2018-07-07",
+    "DateTo": "2019-07-31",
+    "PropertyId": 3
+  }
+]
