@@ -71,8 +71,7 @@ namespace backend
                 options.AddPolicy("RequireAgentRole", policy => policy.RequireClaim("https://property.com/roles", "Agent"));
             });
 
-            
-            services.AddDbContext<PropertyDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")).ToString());
+            services.AddDbContext<PropertyDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllers();
             services.AddAutoMapper(typeof(PropertyRepository).Assembly, typeof(AccountRepository).Assembly);

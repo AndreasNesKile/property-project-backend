@@ -3,6 +3,8 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
+ENV ConnectionStrings:DefaultConnection "Server=db;Database=master;User=sa;Password=ENVPW"
+
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["backend/backend.csproj", "backend/"]
